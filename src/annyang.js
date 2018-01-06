@@ -601,6 +601,7 @@
      * @method trigger
      */
     trigger: function(sentences) {
+      /*
       if(!annyang.isListening()) {
         if (debugState) {
           if (!isListening) {
@@ -611,6 +612,7 @@
         }
         return;
       }
+      */
 
       if (!Array.isArray(sentences)) {
         sentences = [sentences];
