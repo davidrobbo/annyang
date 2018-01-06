@@ -278,6 +278,19 @@ annyang.trigger(
 
 * undefined
 
+## if()
+
+if(!annyang.isListening()) {
+        if (debugState) {
+          if (!isListening) {
+            logMessage('Cannot trigger while annyang is aborted');
+          } else {
+            logMessage('Speech heard, but annyang is paused');
+          }
+        }
+        return;
+      }
+
 # Good to Know
 
 ## Commands Object

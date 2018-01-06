@@ -609,9 +609,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @method trigger
      */
     trigger: function trigger(sentences) {
-      if (!annyang.isListening()) {
+      /*
+      if(!annyang.isListening()) {
         if (debugState) {
-          if (!_isListening) {
+          if (!isListening) {
             logMessage('Cannot trigger while annyang is aborted');
           } else {
             logMessage('Speech heard, but annyang is paused');
@@ -619,6 +620,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
         return;
       }
+      */
 
       if (!Array.isArray(sentences)) {
         sentences = [sentences];
