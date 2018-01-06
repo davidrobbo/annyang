@@ -10,6 +10,14 @@ For a more in-depth look at annyang, read on.
 
 # API Reference
 
+## commandsList
+
+Needs fully testing, but this is ignored in order to provide initialisation to subsequently
+    take advantage of 'trigger' functionality
+    if (!SpeechRecognition) {
+      return null;
+    }
+
 ## init(commands, [resetCommands=true])
 
 Initialize annyang with a list of commands to recognize.

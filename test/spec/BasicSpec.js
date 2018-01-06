@@ -76,6 +76,10 @@
       expect(annyang.trigger).toEqual(jasmine.any(Function));
     });
 
+    it('should expose isAvailable method', function() {
+      expect(annyang.isAvailable).toEqual(jasmine.any(Function));
+    });
+
   });
 
   describe('annyang.abort', function() {
@@ -1514,6 +1518,18 @@
       annyang.abort();
       annyang.trigger(sentence1);
       expect(console.log).not.toHaveBeenCalled();
+    });
+
+  });
+
+  describe('annyang.isAvailable', function() {
+
+    beforeEach(function() {
+      annyang.start();
+    });
+
+    it('should return true when annyang starts', function() {
+      expect(annyang.isAvailable()).toBe(true);
     });
 
   });

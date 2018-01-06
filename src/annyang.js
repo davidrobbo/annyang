@@ -38,9 +38,13 @@
 
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
-  if (!SpeechRecognition) {
-    return null;
-  }
+  /*
+    Needs fully testing, but this is ignored in order to provide initialisation to subsequently
+    take advantage of 'trigger' functionality
+    if (!SpeechRecognition) {
+      return null;
+    }
+  */
 
   var commandsList = [];
   var recognition;
@@ -138,6 +142,10 @@
 
   annyang = {
 
+    isAvailable: function isAvailable() {
+      return recognition !== undefined && recognition.isAvailable;
+    },
+
     /**
      * Initialize annyang with a list of commands to recognize.
      *
@@ -166,7 +174,9 @@
       }
 
       // initiate SpeechRecognition
-      recognition = new SpeechRecognition();
+      var inWindow = typeof SpeechRecognition !== 'undefined';
+      recognition = inWindow ? new SpeechRecognition() : {};
+      recognition.isAvailable = inWindow;
 
       // Set the max number of alternative transcripts to try and match with a command
       recognition.maxAlternatives = 5;

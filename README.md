@@ -1,3 +1,13 @@
+# Mods
+An 'isAvailable' method has been added to the import.
+
+Subsequently, if SpeechRecognition is not available in the browser,
+the package will not be set to null as in annyang; instead, the user
+must check for isAvailable and then implement their code. This allows
+the user to still take advantage of the 'trigger' functionality.
+
+Not fully tested yet, but appears to work for the above use case.
+
 # annyang!
 
 A tiny javascript SpeechRecognition library that lets your users control your site with voice commands.
